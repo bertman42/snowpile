@@ -12,7 +12,7 @@ export TZ=America/Toronto
 DIR='/home/pi/snowpile/images_timelapse'
 echo -e "\nDIR is: "$DIR
 
-typeset -i N=$(cat timerfile.dat)
+typeset -i N=$(cat /home/pi/snowpile/timerfile.dat)
 echo -e "\nOriginal number is: " $N
 
 N=$N+1
