@@ -1,6 +1,8 @@
 #!/bin/bash
+#Let's make sure we have the right TimeZone
+export TZ=America/Toronto
 
-DIR='/home/pi/snowpile/images/'
+DIR='/home/pi/snowpile/images_timelapse/'
 echo -e "\nDIR is: "$DIR
 
 typeset -i N=$(cat timerfile.dat)
@@ -30,7 +32,7 @@ echo -e "\nMaking the timelapse..."
 
 #cd $DIR
 
-avconv -y -r 1 -i $DIR/%05d.jpg -vcodec libx264 -r 1 $DIR/output.mp4
+avconv -y -r 1 -i $DIR%05d.jpg -vcodec libx264 -r 1 $DIR/output.mp4
 
-#cd ~
+cd ~
 
